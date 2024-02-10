@@ -30,16 +30,15 @@ struct ContentView: View {
                 .onDelete { indexSet in
                     assignmentList.items.remove(atOffsets: indexSet)
                 }
-                .sheet(isPresented: $showingAddAssignmentView, content: {
-                    AddAssignmentView(assignmentList: assignmentList)
-                })
-                .navigationBarTitle("Assignment Notebook")
-                .navigationBarItems(leading: EditButton(),
-                                    trailing: Button(action: {
-                                        showingAddAssignmentView = true }) {
-                                        Image(systemName: "plus")
-                })
             }
+            .sheet(isPresented: $showingAddAssignmentView, content: {
+                AddAssignmentView(assignmentList: assignmentList)
+            })
+            .navigationBarTitle("Assignment Notebook")
+            .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                showingAddAssignmentView = true }) {
+                    Image(systemName: "plus")
+            })
         }
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 class AssignmentList: ObservableObject {
-    @Published var items :  [AssignmentItem] {
+    @Published var items : [AssignmentItem] {
         didSet {
             let encoder = JSONEncoder()
             if let encoded = try? encoder.encode(items) {

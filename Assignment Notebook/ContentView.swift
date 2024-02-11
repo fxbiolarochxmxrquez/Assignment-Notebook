@@ -39,6 +39,7 @@ struct ContentView: View {
                 showingAddAssignmentView = true }) {
                     Image(systemName: "plus")
             })
+            .background(Gradient(colors: [.red, .pink, .white]).opacity(0.6))
         }
     }
 }
